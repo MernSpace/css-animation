@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h2>Hello js</h2>
+        <div class="banner"></div>
+    </section>
+    <script>
+        const banner = document.getElementsByClassName('banner')[0];
+
+        // Add blocks to the banner
+        for (let i = 0; i < 400; i++) {
+            banner.innerHTML += "<div class='block'></div>";
+        }
+
+        // Set animation delay for each block
+        const blocks = document.getElementsByClassName('block');
+        for (let i = 0; i < blocks.length; i++) {
+            blocks[i].style.animationDelay = `${i * 0.05}s`;
+        }
+    </script>
+</body>
+</html>
