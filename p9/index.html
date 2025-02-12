@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="face">
+        <div class="eyes">
+            <div class="eye"></div>
+            <div class="eye"></div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('body').addEventListener('mousemove',function(){
+            var eye = document.querySelectorAll('.eye');
+            eye.forEach(function(e){
+                var x = e.getBoundingClientRect().left + (e.clientWidth / 2);
+               let y = e.getBoundingClientRect().top + (e.clientHeight /2)
+               let radian = Math.atan2(event.pageX - x, event.pageY - y)
+                let degree = (radian * (180 / Math.PI) * -1) + 270;
+                e.style.transform = 'rotate(' + degree + 'deg)';
+            })
+        })
+    </script>
+</body>
+
+</html>
